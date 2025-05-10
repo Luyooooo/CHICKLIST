@@ -1,5 +1,7 @@
 
-package chicklist;
+package Logica;
+
+import Persistencia.ManejoDeUsuario;
 
 
 public abstract class Dueño {
@@ -14,7 +16,23 @@ public abstract class Dueño {
         this.contraseña = contraseña;
         this.manejoDeU=new ManejoDeUsuario();
     }
-
+    
+    //registrar el dueño
+    public void registrarDueño(String nombre,String usuario,String contraseña){
+        manejoDeU.registrarUsuario(nombre, usuario, contraseña);
+    }
+    
+    //autenticar los datos del dueño para iniciar sesion
+    public void autenticarDueño(String usuario,String contraseña){
+        manejoDeU.autenticarUsuario(usuario, contraseña);
+    }
+    
+    public abstract void administrarInventario();
+    public abstract void administrarVentas();
+    public abstract void hacerSeguimientoDePagos();
+    public abstract void generarReporte();
+    public abstract void gestionarClientes();
+    
     public String getNombre() {
         return nombre;
     }
@@ -47,19 +65,6 @@ public abstract class Dueño {
         this.manejoDeU = manejoDeU;
     }
     
-    //registrar el dueño
-    public void registrarDueño(String nombre,String usuario,String contraseña){
-        manejoDeU.registrarUsuario(nombre, usuario, contraseña);
-    }
-    
-    //autenticar los datos del dueño para iniciar sesion
-    public void autenticarDueño(String usuario,String contraseña){
-        manejoDeU.autenticarUsuario(usuario, contraseña);
-    }
-    
-    public abstract void administrarInventario();
-    public abstract void generarReporte();
-    public abstract void gestionarClientes();
     
     
     
