@@ -18,7 +18,7 @@ public class ManejoDeInventario {
             System.out.println("Producto ingresado exitosamente");
 
         } catch (IOException e) {
-            System.err.println("Error al registrar usuario: " + e.getMessage());
+            System.err.println("Error al registrar producto: " + e.getMessage());
         }
     }
 }
