@@ -11,4 +11,14 @@ public abstract class Inventario {
     public abstract void editarProducto(Producto producto);
     public abstract void eliminarProducto(Producto producto);
     public abstract void actualizarUnidades(Producto producto, int unidades);
+
+    public List<Producto> getProductos() {
+        return productos;
+    }
+
+    public void setProductos(List<Producto> productos) {
+        this.productos = productos;
+    }
+    
+    
 }
