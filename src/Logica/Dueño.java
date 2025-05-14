@@ -18,12 +18,12 @@ public abstract class Dueño {
     }
     
     //registrar el dueño
-    public void registrarDueño(String nombre,String usuario,String contraseña){
+    public void registrarDueño(){
         manejoDeU.registrarUsuario(nombre, usuario, contraseña);
     }
     
     //autenticar los datos del dueño para iniciar sesion
-    public void autenticarDueño(String usuario,String contraseña){
+    public void autenticarDueño(){
         manejoDeU.autenticarUsuario(usuario, contraseña);
     }
     
