@@ -1,10 +1,10 @@
 
-package chicklist;
+package chiklist;
 import Persistencia.ManejoDeInventario;
 import java.time.LocalDate;
 import Persistencia.ManejoDeUsuario;
 
-public class CHICKLIST {
+public class CHIKLIST {
 
     
     public static void main(String[] args) {
