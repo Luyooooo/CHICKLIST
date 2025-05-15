@@ -12,9 +12,9 @@ public class CHIKLIST {
         LocalDate fecha=LocalDate.now();
         System.out.println(fecha);*/
         ManejoDeUsuario u=new ManejoDeUsuario();
-        u.registrarUsuario("pepito", "pepito34", "1234");
+        //u.registrarUsuario("pepito", "pepito34", "1234");
         ManejoDeInventario i=new ManejoDeInventario();
-        i.registrarProducto("pepito34", "botella de agua", 700, 5);
+        i.registrarProducto("pepito34", "botella de agua",1, 700, 5);
     }
     
 }
