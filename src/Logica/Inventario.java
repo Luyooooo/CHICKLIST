@@ -2,13 +2,24 @@
 package Logica;
 
 import java.util.List;
+import Persistencia.ManejoDeInventario;
 
 
 public abstract class Inventario {
+    private Dueño dueño;
     private List<Producto> productos;
     
-    public abstract void añadirProducto(Producto producto);
-    public abstract void editarProducto(Producto producto);
+    public void añadirProducto(Producto producto){
+        ManejoDeInventario.registrarProducto(dueño.getNombre(), producto.getNombre(), producto.getCodigoProducto(), producto.getPrecio(), producto.getCantidad());
+    }
+    
+    public void editarNombreProducto(Producto producto,String nuevoNombre){
+        ManejoDeInventario.editarNombre(dueño.getNombre(), producto.getCodigoProducto(), nuevoNombre);
+    }
+    
+    public void editarPrecioProducto(Producto producto,double nuevoPrecio){
+        ManejoDeInventario.editarPrecioProducto(dueño.getNombre(), producto.getCodigoProducto(), nuevoPrecio);
+    }
     public abstract void eliminarProducto(Producto producto);
     public abstract void actualizarUnidades(Producto producto, int unidades);
 

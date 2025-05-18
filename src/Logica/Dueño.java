@@ -5,26 +5,24 @@ import Persistencia.ManejoDeUsuario;
 
 
 public abstract class Dueño {
-    private String nombre;
+    private static String nombre;
     private String usuario;
     private String contraseña;
-    private ManejoDeUsuario manejoDeU;
 
     public Dueño(String nombre, String usuario, String contraseña) {
         this.nombre = nombre;
         this.usuario = usuario;
         this.contraseña = contraseña;
-        this.manejoDeU=new ManejoDeUsuario();
     }
     
     //registrar el dueño
     public void registrarDueño(){
-        manejoDeU.registrarUsuario(nombre, usuario, contraseña);
+        ManejoDeUsuario.registrarUsuario(nombre, usuario, contraseña);
     }
     
     //autenticar los datos del dueño para iniciar sesion
     public void autenticarDueño(){
-        manejoDeU.autenticarUsuario(usuario, contraseña);
+        ManejoDeUsuario.autenticarUsuario(usuario, contraseña);
     }
     
     public abstract void administrarInventario();
@@ -45,13 +43,10 @@ public abstract class Dueño {
         return contraseña;
     }
 
-    public ManejoDeUsuario getManejoDeU() {
-        return manejoDeU;
-    }
 
-    public void setNombre(String nombre) {
+    /*public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
+    }*/
 
     public void setUsuario(String usuario) {
         this.usuario = usuario;
@@ -61,10 +56,6 @@ public abstract class Dueño {
         this.contraseña = contraseña;
     }
 
-    public void setManejoDeU(ManejoDeUsuario manejoDeU) {
-        this.manejoDeU = manejoDeU;
-    }
-    
     
     
     
