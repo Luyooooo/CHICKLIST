@@ -39,7 +39,7 @@ public class ManejoDeUsuario {
         return false; // No se encontró el usuario
     }
 
-// Método para registrar un nuevo usuario
+    // Método para registrar un nuevo usuario
     public static void registrarUsuario(String nombre, String usuario, String contraseña) {
         if (usuarioExiste(usuario)) {
             JOptionPane.showMessageDialog(null,"Error: El usuario '" + usuario + "' ya está registrado." );

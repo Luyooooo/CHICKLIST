@@ -20,8 +20,12 @@ public abstract class Inventario {
     public void editarPrecioProducto(Producto producto,double nuevoPrecio){
         ManejoDeInventario.editarPrecioProducto(dueño.getNombre(), producto.getCodigoProducto(), nuevoPrecio);
     }
-    public abstract void eliminarProducto(Producto producto);
-    public abstract void actualizarUnidades(Producto producto, int unidades);
+    public void eliminarProducto(Producto producto){
+        ManejoDeInventario.eliminarProducto(dueño.getNombre(), producto.getCodigoProducto());
+    }
+    public void actualizarUnidades(Producto producto, int unidades){
+        ManejoDeInventario.actualizarCantidad(dueño.getNombre(), producto.getCodigoProducto(), unidades);
+    }
 
     public List<Producto> getProductos() {
         return productos;
