@@ -1,6 +1,7 @@
 
 package Logica;
 
+import Persistencia.ManejoDeClientes;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,7 +20,18 @@ public abstract class Cliente {
         this.cedula=cedula;
     }
     
-    public abstract void registrarCliente();
+    //public void agregarVenta(Venta venta){}
+    //public void actualizarSaldo(double montoPagado){}
+    //public String toString(){}
+    
+    public void registrarCliente(){
+        ManejoDeClientes.registrarCliente(nombre, apellido, cedula);
+    }
+
+    public double getSaldoPendiente() {
+        return saldoPendiente;
+    }
+    
     
     public String getNombre() {
         return nombre;
@@ -44,6 +56,7 @@ public abstract class Cliente {
     public void setCedula(int cedula) {
         this.cedula = cedula;
     }
+    
     
     
     

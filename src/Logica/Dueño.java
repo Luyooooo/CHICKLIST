@@ -21,15 +21,16 @@ public abstract class Dueño {
     }
     
     //autenticar los datos del dueño para iniciar sesion
-    public void autenticarDueño(){
-        ManejoDeUsuario.autenticarUsuario(usuario, contraseña);
+    public boolean autenticarDueño(){
+        return ManejoDeUsuario.autenticarUsuario(usuario, contraseña);
     }
     
-    public abstract void administrarInventario();
+    //public String toString(){}
+    /*public abstract void administrarInventario();
     public abstract void administrarVentas();
     public abstract void hacerSeguimientoDePagos();
     public abstract void generarReporte();
-    public abstract void gestionarClientes();
+    public abstract void gestionarClientes();*/
     
     public String getNombre() {
         return nombre;

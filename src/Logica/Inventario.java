@@ -26,6 +26,9 @@ public abstract class Inventario {
     public void actualizarUnidades(Producto producto, int unidades){
         ManejoDeInventario.actualizarCantidad(dueño.getNombre(), producto.getCodigoProducto(), unidades);
     }
+    
+    //public void buscarProducto(){}
+    //public void mostrarInventario(){}
 
     public List<Producto> getProductos() {
         return productos;

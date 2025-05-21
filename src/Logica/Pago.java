@@ -9,7 +9,8 @@ public abstract class Pago {
     private double monto;
     private LocalDate fecha;
     
-    public abstract void actualizarPago();
+    //public boolean esPagoCompleto(){}
+    //public String resumenPago(){}
 
     public Cliente getCliente() {
         return cliente;

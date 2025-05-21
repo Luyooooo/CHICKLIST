@@ -37,8 +37,8 @@ public class ManejoDeClientes {
         return false; // No se encontró el usuario
     }
     
-    // Método para registrar un nuevo usuario
-    public static void registrarUsuario(String nombre, String apellido, int cedula) {
+    // Método para registrar un nuevo cliente
+    public static void registrarCliente(String nombre, String apellido, int cedula) {
         if (clienteExiste(cedula)) {
             return; // No se registra el cliente
         }
@@ -48,34 +48,30 @@ public class ManejoDeClientes {
             out.println(nombre + "," + apellido + "," + cedula);//guarda los datos del cliente
 
             // Crear el archivo de datos para el nuevo cliente
-            //crearArchivoDatos(cedula);
+            crearArchivoDatos(cedula);
 
         } catch (IOException e) {
             //ver despues XD System.err.println("Error al registrar usuario: " + e.getMessage());
         }
     }
     
-    private static void crearArchivoInventario(int cedula) {
-        // Asegurarse de que el directorio de inventarios exista
+    private static void crearArchivoDatos(int cedula) {
         File directorio = new File(DIRECTORIO_INFORMACION);
         if (!directorio.exists()) {
-            directorio.mkdirs(); // Crea el directorio si no existe
+            directorio.mkdirs();
         }
 
         String nombreArchivo = DIRECTORIO_INFORMACION + "inventario_" + cedula + ".txt";
         File archivoInventario = new File(nombreArchivo);
-
-        /*try {
+        try {
             if (archivoInventario.createNewFile()) {
-                JOptionPane.showMessageDialog(null, "Archivo de inventario creado para: " + cedula);
-                //System.out.println("Archivo de inventario creado para: " + nombreUsuario);
+                System.out.println("Archivo creado: " + archivoInventario.getName());
             } else {
-                JOptionPane.showMessageDialog(null,"El archivo de inventario para " + cedula + " ya existía." );
-                //System.out.println("El archivo de inventario para " + nombreUsuario + " ya existía.");
+                System.out.println("El archivo ya existe.");
             }
         } catch (IOException e) {
-            System.err.println("Error al crear el archivo de inventario para " + cedula + ": " + e.getMessage());
-        }*/
+            System.err.println("Error al crear el archivo del cliente: " + e.getMessage());
+        }
     }
     
 }

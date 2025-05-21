@@ -9,6 +9,8 @@ public abstract class Venta {
     private Cliente cliente;
     private List<Producto> productosVendidos;
     private LocalDate fecha;
+    private boolean pagada;
+    private double total;
     
     
     public abstract float calcularTotalVenta();
