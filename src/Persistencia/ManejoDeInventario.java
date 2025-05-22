@@ -203,7 +203,7 @@ public class ManejoDeInventario {
         List<String> lineasModificadas = new ArrayList<>();
         boolean productoEncontrado = false;
 
-        if (!archivoInventarioExiste(nombreUsuario)) { //El "!" antes de eso es para que el netbeans lo lea como si el archivo no existiera. Si no nos tocaria hacer el else y ahi si poner el mensaje creeria yo.
+        if (archivoInventarioExiste(nombreUsuario)) {
             JOptionPane.showMessageDialog(null, "Error: El archivo de inventario para el usuario " + nombreUsuario + " no existe.");
             return;
         }

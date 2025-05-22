@@ -9,7 +9,7 @@ import java.util.List;
 public abstract class Cliente {
     private String nombre;
     private String apellido;
-    private final int cedula; //se lo volvi final porque la cedula no debería modificarse. Pues si algo le quita el final y descomenta el setter. 
+    private int cedula;
     private List<Venta> historialCompras;
     private double saldoPendiente;
     
@@ -18,7 +18,6 @@ public abstract class Cliente {
         this.nombre=nombre;
         this.apellido=apellido;
         this.cedula=cedula;
-        this.saldoPendiente = 0.0; //inicialicemos el saldo. Y pues lo incrementamos dependiendo si debe o no.
     }
     
     //public void agregarVenta(Venta venta){}
@@ -54,9 +53,9 @@ public abstract class Cliente {
         this.apellido = apellido;
     }
 
-    /*public void setCedula(int cedula) { 
+    public void setCedula(int cedula) {
         this.cedula = cedula;
-    }*/
+    }
     
     
     
