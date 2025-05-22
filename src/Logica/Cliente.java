@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public abstract class Cliente {
+public class Cliente {
     private String nombre;
     private String apellido;
     private final int cedula;  //se lo volvi final porque la cedula no debería modificarse. Pues si algo le quita el final y descomenta el setter.
@@ -14,20 +14,34 @@ public abstract class Cliente {
     private double saldoPendiente;
     
     public Cliente(String nombre,String apellido,int cedula){
-        historialCompras = new ArrayList<Venta>();
+        historialCompras = new ArrayList<>();
         this.nombre=nombre;
         this.apellido=apellido;
         this.cedula=cedula;
         this.saldoPendiente = 0.0; //inicialicemos el saldo. Y pues lo incrementamos dependiendo si debe o no.
     }
     
-    //public void agregarVenta(Venta venta){}
+    public void agregarVenta(Venta venta){
+         historialCompras.add(venta);
+        if (!venta.isPagada()) {
+            saldoPendiente += venta.getTotal();
+        }
+    }
+    
+    public void pagar(double monto){
+        saldoPendiente -= monto;
+        if (saldoPendiente<0) {
+            saldoPendiente=0;
+        }
+    }
+    
+    @Override
+    public String toString(){
+        return nombre + " " + apellido + "\n(Cedula: " + cedula + ")";
+    }
     //public void actualizarSaldo(double montoPagado){}
     //public String toString(){}
     
-    public void registrarCliente(){
-        ManejoDeClientes.registrarCliente(nombre, apellido, cedula);
-    }
 
     public double getSaldoPendiente() {
         return saldoPendiente;
@@ -46,17 +60,11 @@ public abstract class Cliente {
         return cedula;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public List<Venta> getHistorialCompras() {
+        return historialCompras;
     }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
-    /*public void setCedula(int cedula) {
-        this.cedula = cedula;
-    }*/
+    
+    
     
     
     

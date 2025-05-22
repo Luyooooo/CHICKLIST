@@ -2,40 +2,65 @@
 package Logica;
 
 import java.util.List;
-import Persistencia.ManejoDeInventario;
+import java.util.ArrayList;
 
 
-public abstract class Inventario {
-    private Dueño dueño;
+public class Inventario {
     private List<Producto> productos;
     
-    public void añadirProducto(Producto producto){
-        ManejoDeInventario.registrarProducto(dueño.getNombre(), producto.getNombre(), producto.getCodigoProducto(), producto.getPrecio(), producto.getCantidad());
+    public Inventario(){
+        this.productos = new ArrayList<>();
     }
     
-    public void editarNombreProducto(Producto producto,String nuevoNombre){
-        ManejoDeInventario.editarNombre(dueño.getNombre(), producto.getCodigoProducto(), nuevoNombre);
+    public Producto buscarProducto(String nombre) {
+        for (Producto p : productos) {
+            if (p.getNombre().equalsIgnoreCase(nombre)) {
+                return p;
+            }
+        }
+        return null;
     }
     
-    public void editarPrecioProducto(Producto producto,double nuevoPrecio){
-        ManejoDeInventario.editarPrecioProducto(dueño.getNombre(), producto.getCodigoProducto(), nuevoPrecio);
-    }
-    public void eliminarProducto(Producto producto){
-        ManejoDeInventario.eliminarProducto(dueño.getNombre(), producto.getCodigoProducto());
-    }
-    public void actualizarUnidades(Producto producto, int unidades){
-        ManejoDeInventario.actualizarCantidad(dueño.getNombre(), producto.getCodigoProducto(), unidades);
+    
+    public void agregarProducto(Producto producto) {
+        Producto producto1 = buscarProducto(producto.getNombre());
+        if (producto1 == null) {
+            productos.add(producto);
+        } else {
+            producto1.aumentarCantidad(producto.getCantidad());
+        }
     }
     
-    //public void buscarProducto(){}
-    //public void mostrarInventario(){}
+    public boolean eliminarProducto(String nombre) {
+        Producto producto = buscarProducto(nombre);
+        if (producto != null) {
+            productos.remove(producto);
+            return true;
+        }
+        return false;
+    }
+    
+    public boolean actualizarCantidad(String nombre, int cantidad) {
+        Producto producto = buscarProducto(nombre);
+        if (producto != null) {
+            producto.setCantidad(cantidad);
+            return true;
+        }
+        return false;
+    }
+    
+    public String mostrarInventario() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("=== Inventario ===").append("\n");
+        for (Producto p : productos) {
+            sb.append(p);
+        }
+        return sb.toString();
+    }
+    
 
     public List<Producto> getProductos() {
         return productos;
-    }
-
-    public void setProductos(List<Producto> productos) {
-        this.productos = productos;
     }
     
     

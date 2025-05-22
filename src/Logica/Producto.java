@@ -14,6 +14,25 @@ public class Producto {
         this.precio=precio;
         this.cantidad=cantidad;
     }
+    
+    public void aumentarCantidad(int cantidad) {
+        this.cantidad += cantidad;
+    }
+    
+    public boolean disminuirCantidad(int cantidad) {
+        if (this.cantidad >= cantidad) {
+            this.cantidad -= cantidad;
+            return true;
+        }
+        return false;
+    }
+    
+    
+    @Override
+    public String toString() {
+        return nombre + " - Precio: $" + precio + " - Cantidad: " + cantidad;
+    }
+    
     public String getNombre() {
         return nombre;
     }
@@ -29,10 +48,6 @@ public class Producto {
 
     public int getCantidad() {
         return cantidad;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
     }
 
     public void setCodigoProducto(int codigoProducto) {

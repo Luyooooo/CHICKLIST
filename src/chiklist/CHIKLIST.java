@@ -1,6 +1,9 @@
 
 package chiklist;
-import Persistencia.ManejoDeInventario;
+
+import Logica.Cliente;
+import Persistencia.ManejoDeClientes;
+import Persistencia.ManejoDeProductos;
 import java.time.LocalDate;
 import Persistencia.ManejoDeUsuario;
 
@@ -11,11 +14,9 @@ public class CHIKLIST {
         /*//ola
         LocalDate fecha=LocalDate.now();
         System.out.println(fecha);*/
-        ManejoDeUsuario u=new ManejoDeUsuario();
-        //u.registrarUsuario("pepito", "pepito34", "1234");
-        ManejoDeInventario i=new ManejoDeInventario();
-        i.registrarProducto("pepito32", "botella de agua",1, 700, 5);
-        i.editarPrecioProducto("pepito32", 1, 800);
+        Cliente c1=new Cliente("david", "alvarez", 11021032);
+        ManejoDeClientes c=new ManejoDeClientes();
+        c.registrarCliente(c1);
     }
     
 }

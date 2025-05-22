@@ -1,6 +1,7 @@
 
 package Persistencia;
 
+import Logica.Dueño;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -22,50 +23,43 @@ public class ManejoDeUsuario {
     
     // Método para verificar si un usuario ya existe
     private static boolean usuarioExiste(String usuario) {
-        try (FileReader fr = new FileReader(ARCHIVO_USUARIOS);
-             BufferedReader br = new BufferedReader(fr);
-             Scanner scanner = new Scanner(br)) {
+        try (Scanner scanner = new Scanner(new File(ARCHIVO_USUARIOS))) {
             while (scanner.hasNextLine()) {
-                String linea = scanner.nextLine();
-                String[] campos = linea.split(",");
-                if (campos.length == 3 && campos[1].equals(usuario)) {
-                    return true; // El usuario ya existe
+                String[] datos = scanner.nextLine().split(",");
+                if (datos.length == 3 && datos[1].equals(usuario)) {
+                    return true;
                 }
             }
         } catch (IOException e) {
-            // Si hay un error al leer el archivo, asumimos que no existe el usuario
-            return false;
+            // No hay archivo aún, lo tratamos como usuario no existente
         }
-        return false; // No se encontró el usuario
+        return false;
     }
 
     // Método para registrar un nuevo usuario
-    public static void registrarUsuario(String nombre, String usuario, String contraseña) {
-        if (usuarioExiste(usuario)) {
-            JOptionPane.showMessageDialog(null,"Error: El usuario '" + usuario + "' ya está registrado." );
+    public static void registrarUsuario(Dueño dueño) {
+        if (usuarioExiste(dueño.getUsuario())) {
+            JOptionPane.showMessageDialog(null,"Error: El usuario '" + dueño.getUsuario() + "' ya está registrado." );
             //System.out.println("Error: El usuario '" + usuario + "' ya está registrado.");
             return; // No se registra el usuario
         }
-        try (FileWriter fw = new FileWriter(ARCHIVO_USUARIOS, true); // true para append(agregarlo)
-            BufferedWriter bw = new BufferedWriter(fw);
-            PrintWriter out = new PrintWriter(bw)) {
-            out.println(nombre + "," + usuario + "," + contraseña);
+        try (PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(ARCHIVO_USUARIOS, true)))) {
+            pw.println(dueño.getNombre() + "," + dueño.getUsuario() + "," + dueño.getContraseña());
             JOptionPane.showMessageDialog(null, "usuario registrado exitosamente");
             //System.out.println("Usuario registrado exitosamente.");
 
             // Crear el archivo de inventario para el nuevo usuario
-            crearArchivoInventario(usuario);
+            crearArchivoInventario(dueño.getUsuario());
 
         } catch (IOException e) {
-            System.err.println("Error al registrar usuario: " + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al registrar usuario", "Error", JOptionPane.ERROR_MESSAGE);
+            //System.err.println("Error al registrar usuario: " + e.getMessage());
         }
     }
 
     // Método para autenticar un usuario
     public static boolean autenticarUsuario(String usuario, String contraseña) {
-        try (FileReader fr = new FileReader(ARCHIVO_USUARIOS);
-             BufferedReader br = new BufferedReader(fr);
-             Scanner sc = new Scanner(br)) {
+        try (Scanner sc = new Scanner(new BufferedReader(new FileReader(ARCHIVO_USUARIOS)))) {
             while (sc.hasNextLine()) {
                 String linea = sc.nextLine();
                 String[] campos = linea.split(",");
@@ -74,7 +68,8 @@ public class ManejoDeUsuario {
                 }
             }
         } catch (IOException e) {
-            System.err.println("Error al autenticar usuario: " + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al autenticar usuario", "Error", JOptionPane.ERROR_MESSAGE);
+            //System.err.println("Error al autenticar usuario: " + e.getMessage());
         }
         return false; // No se encontró el usuario o la contraseña es incorrecta
     }
@@ -91,10 +86,10 @@ public class ManejoDeUsuario {
 
         try {
             if (archivoInventario.createNewFile()) {
-                JOptionPane.showMessageDialog(null, "Archivo de inventario creado para: " + nombreUsuario);
+                //JOptionPane.showMessageDialog(null, "Archivo de inventario creado para: " + nombreUsuario);
                 //System.out.println("Archivo de inventario creado para: " + nombreUsuario);
             } else {
-                JOptionPane.showMessageDialog(null,"El archivo de inventario para " + nombreUsuario + " ya existía." );
+                //JOptionPane.showMessageDialog(null,"El archivo de inventario para " + nombreUsuario + " ya existía." );
                 //System.out.println("El archivo de inventario para " + nombreUsuario + " ya existía.");
             }
         } catch (IOException e) {

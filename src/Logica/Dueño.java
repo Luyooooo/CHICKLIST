@@ -4,7 +4,7 @@ package Logica;
 import Persistencia.ManejoDeUsuario;
 
 
-public abstract class Dueño {
+public class Dueño {
     private final String nombre; //Pequeña modificación: Le quite el static y lo volvi final si lo que se quiere es no cambiar el nombre del dueño. Si al final lo vamos a hacer entonces quitamos el final y descomentamos el setter.
     private String usuario;
     private String contraseña;
@@ -15,15 +15,7 @@ public abstract class Dueño {
         this.contraseña = contraseña;
     }
     
-    //registrar el dueño
-    public void registrarDueño(){
-        ManejoDeUsuario.registrarUsuario(nombre, usuario, contraseña);
-    }
     
-    //autenticar los datos del dueño para iniciar sesion
-    public boolean autenticarDueño(){
-        return ManejoDeUsuario.autenticarUsuario(usuario, contraseña);
-    }
     
     //public String toString(){}
     /*public abstract void administrarInventario();

@@ -1,6 +1,7 @@
 
 package Persistencia;
 
+import Logica.Cliente;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -8,6 +9,8 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
@@ -15,20 +18,17 @@ import javax.swing.JOptionPane;
 public class ManejoDeClientes {
     
     private static final String ARCHIVO_CLIENTES = "archivosPersistencia\\clientes.txt"; // Nombre del archivo
-    private static final String DIRECTORIO_INFORMACION="archivosPersistencia\\informacionClientes\\";
+    //private static final String DIRECTORIO_INFORMACION="archivosPersistencia\\informacionClientes\\";
     
     
     // Método para verificar si un usuario ya existe
     private static boolean clienteExiste(int cedula) {
-        try (FileReader fr = new FileReader(ARCHIVO_CLIENTES);
-             BufferedReader br = new BufferedReader(fr);
-             Scanner scanner = new Scanner(br)) {
-            while (scanner.hasNextLine()) {
-                String linea = scanner.nextLine();
-                String[] campos = linea.split(",");
-                if (campos.length == 3 && campos[2].equals(String.valueOf(cedula))) {
-                    return true; // El cliente ya existe
-                }
+        try (Scanner sc = new Scanner(new BufferedReader(new FileReader(ARCHIVO_CLIENTES)))){
+             while (sc.hasNextLine()) {                
+                String[] datos=sc.nextLine().split(",");
+                 if (datos.length==3 && Integer.parseInt(datos[2])==cedula) {
+                     return true;
+                 }
             }
         } catch (IOException e) {
             // Si hay un error al leer el archivo, asumimos que no existe el cliente
@@ -38,24 +38,40 @@ public class ManejoDeClientes {
     }
     
     // Método para registrar un nuevo cliente
-    public static void registrarCliente(String nombre, String apellido, int cedula) {
-        if (clienteExiste(cedula)) {
+    public static void registrarCliente(Cliente cliente) {
+        if (clienteExiste(cliente.getCedula())) {
             return; // No se registra el cliente
         }
-        try (FileWriter fw = new FileWriter(ARCHIVO_CLIENTES, true); // true para append(agregarlo)
-            BufferedWriter bw = new BufferedWriter(fw);
-            PrintWriter out = new PrintWriter(bw)) {
-            out.println(nombre + "," + apellido + "," + cedula);//guarda los datos del cliente
+        try (PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(ARCHIVO_CLIENTES, true)))){// true para append(agregarlo)
+            pw.println(cliente.getNombre() + "," + cliente.getApellido() + "," + cliente.getCedula());
 
             // Crear el archivo de datos para el nuevo cliente
-            crearArchivoDatos(cedula);
+            //crearArchivoDatos(cliente.getCedula());
 
         } catch (IOException e) {
             //ver despues XD System.err.println("Error al registrar usuario: " + e.getMessage());
         }
     }
     
-    private static void crearArchivoDatos(int cedula) {
+    public static List<Cliente> cargarClientes() {
+        List<Cliente> clientes = new ArrayList<>();
+        try (Scanner scanner = new Scanner(new File(ARCHIVO_CLIENTES))) {
+            while (scanner.hasNextLine()) {
+                String[] datos = scanner.nextLine().split(",");
+                if (datos.length == 3) {
+                    String nombre = datos[0];
+                    String apellido = datos[1];
+                    int cedula = Integer.parseInt(datos[2]);
+                    clientes.add(new Cliente(nombre, apellido, cedula));
+                }
+            }
+        } catch (IOException e) {
+            System.err.println("Error al leer los clientes: " + e.getMessage());
+        }
+        return clientes;
+    }
+    
+    /*private static void crearArchivoDatos(int cedula) {
         File directorio = new File(DIRECTORIO_INFORMACION);
         if (!directorio.exists()) {
             directorio.mkdirs();
@@ -65,13 +81,13 @@ public class ManejoDeClientes {
         File archivoInventario = new File(nombreArchivo);
         try {
             if (archivoInventario.createNewFile()) {
-                System.out.println("Archivo creado: " + archivoInventario.getName());
+                //System.out.println("Archivo creado: " + archivoInventario.getName());
             } else {
-                System.out.println("El archivo ya existe.");
+                //System.out.println("El archivo ya existe.");
             }
         } catch (IOException e) {
-            System.err.println("Error al crear el archivo del cliente: " + e.getMessage());
+            //System.err.println("Error al crear el archivo del cliente: " + e.getMessage());
         }
-    }
+    }*/
     
 }
