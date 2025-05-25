@@ -17,13 +17,13 @@ import javax.swing.JOptionPane;
 
 public class ManejoDeClientes {
     
-    private static final String ARCHIVO_CLIENTES = "archivosPersistencia\\clientes.txt"; // Nombre del archivo
+    private static final String ARCHIVO_CLIENTES = "archivosPersistencia\\clientes\\"; // Nombre del archivo
     //private static final String DIRECTORIO_INFORMACION="archivosPersistencia\\informacionClientes\\";
     
     
     // Método para verificar si un usuario ya existe
-    private static boolean clienteExiste(int cedula) {
-        try (Scanner sc = new Scanner(new BufferedReader(new FileReader(ARCHIVO_CLIENTES)))){
+    private static boolean clienteExiste(int cedula,String nombreUsuario) {
+        try (Scanner sc = new Scanner(new BufferedReader(new FileReader(ARCHIVO_CLIENTES+ "clientes_" + nombreUsuario + ".txt")))){
              while (sc.hasNextLine()) {                
                 String[] datos=sc.nextLine().split(",");
                  if (datos.length==3 && Integer.parseInt(datos[2])==cedula) {
@@ -38,11 +38,11 @@ public class ManejoDeClientes {
     }
     
     // Método para registrar un nuevo cliente
-    public static void registrarCliente(Cliente cliente) {
-        if (clienteExiste(cliente.getCedula())) {
+    public static void registrarCliente(Cliente cliente, String usuario) {
+        if (clienteExiste(cliente.getCedula(),usuario)) {
             return; // No se registra el cliente
         }
-        try (PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(ARCHIVO_CLIENTES, true)))){// true para append(agregarlo)
+        try (PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(ARCHIVO_CLIENTES+ "clientes_" + usuario + ".txt", true)))){// true para append(agregarlo)
             pw.println(cliente.getNombre() + "," + cliente.getApellido() + "," + cliente.getCedula());
 
             // Crear el archivo de datos para el nuevo cliente
@@ -53,9 +53,9 @@ public class ManejoDeClientes {
         }
     }
     
-    public static List<Cliente> cargarClientes() {
+    public static List<Cliente> cargarClientes(String usuario) {
         List<Cliente> clientes = new ArrayList<>();
-        try (Scanner scanner = new Scanner(new File(ARCHIVO_CLIENTES))) {
+        try (Scanner scanner = new Scanner(new File(ARCHIVO_CLIENTES+ "clientes_" + usuario + ".txt"))) {
             while (scanner.hasNextLine()) {
                 String[] datos = scanner.nextLine().split(",");
                 if (datos.length == 3) {

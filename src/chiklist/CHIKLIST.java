@@ -1,11 +1,14 @@
 
 package chiklist;
 
+import Persistencia.ManejoDeProductos;
 import Logica.Cliente;
+import Logica.Producto;
 import Persistencia.ManejoDeClientes;
 import Persistencia.ManejoDeProductos;
 import java.time.LocalDate;
 import Persistencia.ManejoDeUsuario;
+import java.util.List;
 
 public class CHIKLIST {
 
@@ -16,7 +19,12 @@ public class CHIKLIST {
         System.out.println(fecha);*/
         Cliente c1=new Cliente("david", "alvarez", 11021032);
         ManejoDeClientes c=new ManejoDeClientes();
-        c.registrarCliente(c1);
+        c.registrarCliente(c1,"pepito34");
+        ManejoDeProductos.guardarProducto("pepito34", "salchicha", 2, 3000, 4);
+        List<Producto> productos=ManejoDeProductos.cargarProductos("pepito34");
+        System.out.println(productos);
+        
+        
     }
     
 }

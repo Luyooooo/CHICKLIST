@@ -1,1 +1,2 @@
 botella de agua,1,800.0,5
+salchicha,2,3000.0,4

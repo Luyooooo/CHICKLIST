@@ -1,6 +1,7 @@
 
 package Persistencia;
 
+import Logica.Dueño;
 import Logica.Producto;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -65,12 +66,12 @@ public class ManejoDeProductos {
         return archivoInventario.exists();
     }*/
     
-    public static List<Producto> cargarProductos() {
+    public static List<Producto> cargarProductos(String usuario) {
         List<Producto> productos = new ArrayList<>();
-        try (Scanner scanner = new Scanner(new File(DIRECTORIO_INVENTARIOS))) {
+        try (Scanner scanner = new Scanner(new File(DIRECTORIO_INVENTARIOS+ "inventario_" + usuario + ".txt"))) {
             while (scanner.hasNextLine()) {
                 String[] datos = scanner.nextLine().split(",");
-                if (datos.length == 3) {
+                if (datos.length == 4) {
                     String nombre = datos[0];
                     int codigo = Integer.parseInt(datos[1]);
                     double precio = Double.parseDouble(datos[2]);
@@ -84,8 +85,8 @@ public class ManejoDeProductos {
         return productos;
     }
     
-    public static void sobrescribirProductos(List<Producto> productos) {
-        try (PrintWriter out = new PrintWriter(new FileWriter(DIRECTORIO_INVENTARIOS))) {
+    public static void sobrescribirProductos(String usuario,List<Producto> productos) {
+        try (PrintWriter out = new PrintWriter(new FileWriter(DIRECTORIO_INVENTARIOS+ "inventario_" + usuario + ".txt"))) {
             for (Producto p : productos) {
                 out.println(p.getNombre() + "," + p.getCodigoProducto() + "," + p.getPrecio() + "," + p.getCantidad());
             }
