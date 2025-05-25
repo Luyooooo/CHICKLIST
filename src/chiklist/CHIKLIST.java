@@ -20,7 +20,6 @@ public class CHIKLIST {
         Cliente c1=new Cliente("david", "alvarez", 11021032);
         ManejoDeClientes c=new ManejoDeClientes();
         c.registrarCliente(c1,"pepito34");
-        ManejoDeProductos.guardarProducto("pepito34", "salchicha", 2, 3000, 4);
         List<Producto> productos=ManejoDeProductos.cargarProductos("pepito34");
         System.out.println(productos);
         

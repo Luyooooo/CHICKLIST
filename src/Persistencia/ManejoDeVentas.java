@@ -15,10 +15,10 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ManejoDeVentas {
-    private static final String ARCHIVO_VENTAS = "archivosPersistencia\\ventas.txt";
+    private static final String ARCHIVO_VENTAS = "archivosPersistencia\\ventas\\.txt";
     
-    public static void guardarVenta(Venta venta) {
-        try (PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(ARCHIVO_VENTAS, true)))) {
+    public static void guardarVenta(Venta venta,String usuario) {
+        try (PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(ARCHIVO_VENTAS+ "ventas_" + usuario + ".txt", true)))) {
             StringBuilder productosStr = new StringBuilder();
             for (Producto p : venta.getProductosVendidos()) {
                 productosStr.append(p.getNombre()).append(":")
@@ -45,9 +45,9 @@ public class ManejoDeVentas {
         return null;
     }
     
-     public static List<Venta> cargarVentas(List<Cliente> clientes) {
+     public static List<Venta> cargarVentas(List<Cliente> clientes,String usuario) {
         List<Venta> ventas = new ArrayList<>();
-        try (Scanner scanner = new Scanner(new File(ARCHIVO_VENTAS))) {
+        try (Scanner scanner = new Scanner(new File(ARCHIVO_VENTAS+ "ventas_" + usuario + ".txt"))) {
             while (scanner.hasNextLine()) {
                 String[] datos = scanner.nextLine().split(",", 5);
                 if (datos.length == 5) {

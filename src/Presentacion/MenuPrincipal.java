@@ -15,7 +15,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     /**
      * Creates new form MenuPrincipal
      */
-    public String usuario;
+    private String usuario;
     public MenuPrincipal(String usuario) {
         this.usuario=usuario;
         initComponents();
@@ -73,9 +73,19 @@ public class MenuPrincipal extends javax.swing.JFrame {
         fondo.add(generarReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 150, 60));
 
         registrarCliente.setText("Registrar cliente");
+        registrarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                registrarClienteActionPerformed(evt);
+            }
+        });
         fondo.add(registrarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 130, 50));
 
         registrarVenta.setText("Registrar venta");
+        registrarVenta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                registrarVentaActionPerformed(evt);
+            }
+        });
         fondo.add(registrarVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 140, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -94,6 +104,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void generarReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generarReporteActionPerformed
         // TODO add your handling code here:
+        new Presentacion.generarReporte(usuario).setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_generarReporteActionPerformed
 
     private void CerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CerrarSesionActionPerformed
@@ -110,6 +122,18 @@ public class MenuPrincipal extends javax.swing.JFrame {
         new Presentacion.Inventario(usuario).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_verInventarioActionPerformed
+
+    private void registrarVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarVentaActionPerformed
+        // TODO add your handling code here:
+        new Presentacion.RegistrarVenta(usuario).setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_registrarVentaActionPerformed
+
+    private void registrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarClienteActionPerformed
+        // TODO add your handling code here:
+        new Presentacion.RegistrarCliente(usuario).setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_registrarClienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -138,12 +162,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        /* Create and display the form 
+        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MenuPrincipal().setVisible(true);
+                new MenuPrincipal("pepito34").setVisible(true);
             }
-        });*/
+        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

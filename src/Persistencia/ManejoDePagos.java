@@ -14,10 +14,10 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ManejoDePagos {
-    private static final String ARCHIVO_PAGOS = "archivosPersistencia\\pagos.txt";
+    private static final String ARCHIVO_PAGOS = "archivosPersistencia\\pagos\\";
     
-    public static void registrarPago(Pago pago) {
-        try (PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(ARCHIVO_PAGOS, true)))) {
+    public static void registrarPago(Pago pago,String usuario) {
+        try (PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(ARCHIVO_PAGOS+ "pagos_" + usuario + ".txt", true)))) {
             out.println(pago.getCliente().getCedula() + "," +
                         pago.getMonto() + "," +
                         pago.getFecha());
@@ -36,9 +36,9 @@ public class ManejoDePagos {
     }
     
     
-    public static List<Pago> cargarPagos(List<Cliente> clientes) {
+    public static List<Pago> cargarPagos(List<Cliente> clientes,String usuario) {
         List<Pago> pagos = new ArrayList<>();
-        try (Scanner scanner = new Scanner(new File(ARCHIVO_PAGOS))) {
+        try (Scanner scanner = new Scanner(new File(ARCHIVO_PAGOS+ "pagos_" + usuario + ".txt"))) {
             while (scanner.hasNextLine()) {
                 String[] datos = scanner.nextLine().split(",");
                 if (datos.length == 3) {

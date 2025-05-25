@@ -37,6 +37,8 @@ public class Inventario extends javax.swing.JFrame {
         recargarButton = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
+        agregarProductoButton = new javax.swing.JButton();
+        VolverButton = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
@@ -51,7 +53,7 @@ public class Inventario extends javax.swing.JFrame {
                 recargarButtonActionPerformed(evt);
             }
         });
-        fondo.add(recargarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 40, -1, -1));
+        fondo.add(recargarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 40, -1, -1));
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -76,16 +78,27 @@ public class Inventario extends javax.swing.JFrame {
 
         fondo.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 590));
 
-        jButton1.setText("Agregar producto");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        agregarProductoButton.setText("Agregar producto");
+        agregarProductoButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                agregarProductoButtonActionPerformed(evt);
             }
         });
-        fondo.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 100, -1, -1));
+        fondo.add(agregarProductoButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 110, -1, -1));
 
-        jButton2.setText("Volver");
-        fondo.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 170, -1, -1));
+        VolverButton.setText("Volver");
+        VolverButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VolverButtonActionPerformed(evt);
+            }
+        });
+        fondo.add(VolverButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 280, -1, -1));
+
+        jButton1.setText("Actualizar cantidad");
+        fondo.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 160, -1, -1));
+
+        jButton2.setText("Eliminar producto");
+        fondo.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 200, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -119,9 +132,16 @@ public class Inventario extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_recargarButtonActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void agregarProductoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarProductoButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        
+    }//GEN-LAST:event_agregarProductoButtonActionPerformed
+
+    private void VolverButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverButtonActionPerformed
+        // TODO add your handling code here:
+        new Presentacion.MenuPrincipal(usuario).setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_VolverButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -150,16 +170,18 @@ public class Inventario extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        /* Create and display the form */
+        /* Create and display the form 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Inventario("pepito34").setVisible(true);
             }
-        });
+        });*/
     }
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton VolverButton;
+    private javax.swing.JButton agregarProductoButton;
     private javax.swing.JPanel fondo;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;

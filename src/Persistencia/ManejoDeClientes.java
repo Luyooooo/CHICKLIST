@@ -22,7 +22,7 @@ public class ManejoDeClientes {
     
     
     // Método para verificar si un usuario ya existe
-    private static boolean clienteExiste(int cedula,String nombreUsuario) {
+    public static boolean clienteExiste(int cedula,String nombreUsuario) {
         try (Scanner sc = new Scanner(new BufferedReader(new FileReader(ARCHIVO_CLIENTES+ "clientes_" + nombreUsuario + ".txt")))){
              while (sc.hasNextLine()) {                
                 String[] datos=sc.nextLine().split(",");

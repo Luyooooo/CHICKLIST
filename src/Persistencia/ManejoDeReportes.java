@@ -15,7 +15,7 @@ import java.util.List;
 public class ManejoDeReportes {
     private static final String DIRECTORIO_REPORTES = "archivosPersistencia\\reportes\\";
     
-    public static void generarReporteDiario(List<Venta> ventas, List<Pago> pagos) {
+    public static void generarReporteDiario(List<Venta> ventas, List<Pago> pagos,String usuario) {
         double totalVentas = 0, totalPagado = 0, totalPendiente = 0;
         for (Venta v : ventas) {
             totalVentas += v.getTotal();
@@ -27,7 +27,7 @@ public class ManejoDeReportes {
             totalPagado += p.getMonto();
         }
 
-        String nombreArchivo = DIRECTORIO_REPORTES + "reporte_" + LocalDate.now() + ".txt";
+        String nombreArchivo = DIRECTORIO_REPORTES + "reporte_"+ usuario + LocalDate.now() + ".txt";
 
         File directorio = new File(DIRECTORIO_REPORTES);
         if (!directorio.exists()) directorio.mkdirs();
