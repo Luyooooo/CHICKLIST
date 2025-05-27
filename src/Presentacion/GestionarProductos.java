@@ -42,6 +42,10 @@ public class GestionarProductos extends javax.swing.JFrame {
         editar = new javax.swing.JButton();
         eliminar = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -96,7 +100,7 @@ public class GestionarProductos extends javax.swing.JFrame {
                 precioFieldMousePressed(evt);
             }
         });
-        fondo.add(precioField, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 440, 270, -1));
+        fondo.add(precioField, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 400, 270, -1));
 
         cantidadField.setBackground(new java.awt.Color(255, 255, 255));
         cantidadField.setText("Cantidad de unidades del producto seleccionado");
@@ -105,7 +109,7 @@ public class GestionarProductos extends javax.swing.JFrame {
                 cantidadFieldMousePressed(evt);
             }
         });
-        fondo.add(cantidadField, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 490, 280, -1));
+        fondo.add(cantidadField, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 440, 280, -1));
 
         nombreField.setBackground(new java.awt.Color(255, 255, 255));
         nombreField.setText("Nombre del producto seleccionado");
@@ -141,7 +145,27 @@ public class GestionarProductos extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        fondo.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 480, -1, -1));
+        fondo.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 390, 130, -1));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("Codigo:");
+        fondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("Precio:");
+        fondo.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("Cantidad:");
+        fondo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 440, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setText("Nombre:");
+        fondo.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -151,7 +175,9 @@ public class GestionarProductos extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(fondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(fondo, javax.swing.GroupLayout.PREFERRED_SIZE, 557, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -282,6 +308,10 @@ public class GestionarProductos extends javax.swing.JFrame {
     private javax.swing.JButton eliminar;
     private javax.swing.JPanel fondo;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField nombreField;

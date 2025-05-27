@@ -36,6 +36,7 @@ public class InicioDeSesion extends javax.swing.JFrame {
         contraselaField = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
+        Volver = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -82,12 +83,20 @@ public class InicioDeSesion extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        fondo.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 290, 190, 70));
+        fondo.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 180, 60));
 
         jLabel5.setForeground(new java.awt.Color(238, 238, 238));
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Candado.jpg"))); // NOI18N
         jLabel5.setText("jLabel5");
         fondo.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, -20, 380, 480));
+
+        Volver.setText("Volver");
+        Volver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VolverActionPerformed(evt);
+            }
+        });
+        fondo.add(Volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 300, 170, 60));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -133,6 +142,11 @@ public class InicioDeSesion extends javax.swing.JFrame {
         contraselaField.setText("");
     }//GEN-LAST:event_contraselaFieldMousePressed
 
+    private void VolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverActionPerformed
+        new Presentacion.PantallaInicial().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_VolverActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -169,6 +183,7 @@ public class InicioDeSesion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Volver;
     private javax.swing.JPasswordField contraselaField;
     private javax.swing.JPanel fondo;
     private javax.swing.JButton jButton1;
