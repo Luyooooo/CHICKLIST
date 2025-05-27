@@ -1,0 +1,4 @@
+botella de agua,1,800.0,1
+salchicha,2,3000.0,1
+arroz,3,2500.0,2
+papa,4,1500.0,6

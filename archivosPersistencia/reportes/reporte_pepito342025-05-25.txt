@@ -1,0 +1,5 @@
+=== Reporte Diario ===
+Fecha: 2025-05-25
+Total de ventas: $5000.0
+Total pagado: $0.0
+Total pendiente: $5000.0
