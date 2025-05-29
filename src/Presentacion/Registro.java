@@ -26,6 +26,7 @@ public class Registro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton1 = new javax.swing.JButton();
         fondo = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -36,6 +37,9 @@ public class Registro extends javax.swing.JFrame {
         contraseñaField = new javax.swing.JPasswordField();
         registrarse = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
+        Volver = new javax.swing.JButton();
+
+        jButton1.setText("jButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -52,18 +56,19 @@ public class Registro extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Nombre de usuario:");
-        fondo.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, -1, -1));
+        fondo.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 170, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Contraseña:");
-        fondo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 260, -1, -1));
+        fondo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 250, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Nombre completo: ");
         fondo.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 90, -1, -1));
 
+        nombreCompletoField.setBackground(new java.awt.Color(255, 255, 255));
         nombreCompletoField.setText("Ingrese su nombre completo");
         nombreCompletoField.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -75,16 +80,18 @@ public class Registro extends javax.swing.JFrame {
                 nombreCompletoFieldActionPerformed(evt);
             }
         });
-        fondo.add(nombreCompletoField, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, 260, -1));
+        fondo.add(nombreCompletoField, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, 260, 30));
 
+        nombreUsuarioField.setBackground(new java.awt.Color(255, 255, 255));
         nombreUsuarioField.setText("Ingrese su nombre de usuario");
         nombreUsuarioField.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 nombreUsuarioFieldMousePressed(evt);
             }
         });
-        fondo.add(nombreUsuarioField, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 220, 260, -1));
+        fondo.add(nombreUsuarioField, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, 260, 30));
 
+        contraseñaField.setBackground(new java.awt.Color(255, 255, 255));
         contraseñaField.setText("********");
         contraseñaField.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -96,8 +103,10 @@ public class Registro extends javax.swing.JFrame {
                 contraseñaFieldActionPerformed(evt);
             }
         });
-        fondo.add(contraseñaField, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, 260, -1));
+        fondo.add(contraseñaField, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 280, 260, 30));
 
+        registrarse.setBackground(new java.awt.Color(0, 255, 0));
+        registrarse.setForeground(new java.awt.Color(0, 0, 0));
         registrarse.setText("Registrarse");
         registrarse.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         registrarse.addActionListener(new java.awt.event.ActionListener() {
@@ -105,11 +114,21 @@ public class Registro extends javax.swing.JFrame {
                 registrarseActionPerformed(evt);
             }
         });
-        fondo.add(registrarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, 160, 60));
+        fondo.add(registrarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 340, 140, 50));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/F2.1.jpg"))); // NOI18N
         jLabel5.setText("jLabel5");
-        fondo.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 340, 430));
+        fondo.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 340, 470));
+
+        Volver.setBackground(new java.awt.Color(102, 255, 204));
+        Volver.setForeground(new java.awt.Color(0, 0, 0));
+        Volver.setText("Volver");
+        Volver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VolverActionPerformed(evt);
+            }
+        });
+        fondo.add(Volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 350, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -119,7 +138,7 @@ public class Registro extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(fondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(fondo, javax.swing.GroupLayout.DEFAULT_SIZE, 455, Short.MAX_VALUE)
         );
 
         pack();
@@ -165,6 +184,12 @@ public class Registro extends javax.swing.JFrame {
         contraseñaField.setText("");
     }//GEN-LAST:event_contraseñaFieldMousePressed
 
+    private void VolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverActionPerformed
+        // TODO add your handling code here:
+        new Presentacion.PantallaInicial().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_VolverActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -201,8 +226,10 @@ public class Registro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Volver;
     private javax.swing.JPasswordField contraseñaField;
     private javax.swing.JPanel fondo;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

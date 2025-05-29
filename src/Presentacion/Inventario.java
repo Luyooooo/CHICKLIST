@@ -50,6 +50,8 @@ public class Inventario extends javax.swing.JFrame {
         fondo.setPreferredSize(new java.awt.Dimension(690, 430));
         fondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        recargarButton.setBackground(new java.awt.Color(51, 255, 204));
+        recargarButton.setForeground(new java.awt.Color(0, 0, 0));
         recargarButton.setText("Recargar");
         recargarButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         recargarButton.addActionListener(new java.awt.event.ActionListener() {
@@ -59,6 +61,8 @@ public class Inventario extends javax.swing.JFrame {
         });
         fondo.add(recargarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 70, 140, 40));
 
+        gestionarProductosButton.setBackground(new java.awt.Color(51, 255, 51));
+        gestionarProductosButton.setForeground(new java.awt.Color(0, 0, 0));
         gestionarProductosButton.setText("Gestionar productos");
         gestionarProductosButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         gestionarProductosButton.addActionListener(new java.awt.event.ActionListener() {
@@ -68,6 +72,8 @@ public class Inventario extends javax.swing.JFrame {
         });
         fondo.add(gestionarProductosButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 140, 140, 40));
 
+        VolverButton.setBackground(new java.awt.Color(255, 102, 102));
+        VolverButton.setForeground(new java.awt.Color(0, 0, 0));
         VolverButton.setText("Volver");
         VolverButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         VolverButton.addActionListener(new java.awt.event.ActionListener() {
@@ -77,6 +83,8 @@ public class Inventario extends javax.swing.JFrame {
         });
         fondo.add(VolverButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 280, 140, 40));
 
+        agregarProducto.setBackground(new java.awt.Color(255, 255, 0));
+        agregarProducto.setForeground(new java.awt.Color(0, 0, 0));
         agregarProducto.setText("Agregar producto");
         agregarProducto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         agregarProducto.addActionListener(new java.awt.event.ActionListener() {
@@ -86,6 +94,7 @@ public class Inventario extends javax.swing.JFrame {
         });
         fondo.add(agregarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 210, 140, 40));
 
+        jTable2.setBackground(new java.awt.Color(204, 204, 204));
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -111,6 +120,7 @@ public class Inventario extends javax.swing.JFrame {
 
         fondo.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 430));
 
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Pollo meat.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
         fondo.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, -20, 420, 470));

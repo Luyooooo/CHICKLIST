@@ -1,2 +1,4 @@
 pepito,pepito34,1234
 fulano,fulano1,12
+Ingrese su nombre completo,Ingrese su nombre de usuario,********
+juan jose,jalc,jalc1

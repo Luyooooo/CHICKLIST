@@ -47,7 +47,7 @@ public class RegistrarCliente extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 204));
         jPanel1.setMinimumSize(new java.awt.Dimension(690, 430));
         jPanel1.setPreferredSize(new java.awt.Dimension(690, 430));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -109,6 +109,8 @@ public class RegistrarCliente extends javax.swing.JFrame {
         });
         jPanel1.add(nombreField, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, 260, -1));
 
+        registrarCliente.setBackground(new java.awt.Color(102, 255, 204));
+        registrarCliente.setForeground(new java.awt.Color(0, 0, 0));
         registrarCliente.setText("Registrar cliente");
         registrarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         registrarCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -118,6 +120,8 @@ public class RegistrarCliente extends javax.swing.JFrame {
         });
         jPanel1.add(registrarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, 130, 60));
 
+        volverMenu.setBackground(new java.awt.Color(204, 204, 204));
+        volverMenu.setForeground(new java.awt.Color(0, 0, 0));
         volverMenu.setText("Volver al menú");
         volverMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         volverMenu.addActionListener(new java.awt.event.ActionListener() {

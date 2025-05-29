@@ -41,17 +41,13 @@ public class ManejoDeProductos {
     
     //Metodo para registrar un nuevo producto 
     public static void guardarProducto(String nombreUsuario,Producto producto){
-        /*if (archivoInventarioExiste(nombreUsuario)==false) {
-            JOptionPane.showMessageDialog(null, "Error: No existe este usuario");
-            return;//no se registrara el producto
-        }*/
         if (productoExiste(nombreUsuario,producto.getCodigoProducto())) {
-            JOptionPane.showMessageDialog(null, "Error: Ya existe un producto con el codigo " + producto.getCodigoProducto());
+            //JOptionPane.showMessageDialog(null, "Error: Ya existe un producto con el codigo " + producto.getCodigoProducto());
             return;//no se registra el producto
         }
         try (PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(DIRECTORIO_INVENTARIOS+ "inventario_" + nombreUsuario + ".txt", true)))) {
             pw.println(producto.getNombre() + "," + producto.getCodigoProducto() + "," + producto.getPrecio() + "," + producto.getCantidad());
-            JOptionPane.showMessageDialog(null, "producto ingresado exitosamente");
+            //JOptionPane.showMessageDialog(null, "producto ingresado exitosamente");
             //System.out.println("Producto ingresado exitosamente");
 
         } catch (IOException e) {
@@ -60,11 +56,6 @@ public class ManejoDeProductos {
         }
     }
     
-    /*public static boolean archivoInventarioExiste(String nombreUsuario){
-        File archivoInventario = new File(DIRECTORIO_INVENTARIOS+ "inventario_" + nombreUsuario + ".txt");
-        //true si el archivo existe y false si no existe
-        return archivoInventario.exists();
-    }*/
     
     public static List<Producto> cargarProductos(String usuario) {
         List<Producto> productos = new ArrayList<>();

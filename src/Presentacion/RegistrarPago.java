@@ -41,19 +41,18 @@ public class RegistrarPago extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
         cedulaField = new javax.swing.JTextField();
         montoField = new javax.swing.JTextField();
         buscarCliente = new javax.swing.JButton();
         registrarPago = new javax.swing.JButton();
         volver = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        SaldoPendienteLabel = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        SaldoPendienteLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        fondo.setBackground(new java.awt.Color(255, 255, 255));
+        fondo.setBackground(new java.awt.Color(245, 245, 245));
         fondo.setMinimumSize(new java.awt.Dimension(690, 430));
         fondo.setPreferredSize(new java.awt.Dimension(690, 430));
         fondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -62,22 +61,19 @@ public class RegistrarPago extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Saldo pendiente: ");
-        fondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 180, 60));
+        fondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 180, 60));
 
         jLabel3.setBackground(new java.awt.Color(0, 51, 51));
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Monto a pagar:");
-        fondo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 180, 60));
+        fondo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 180, 60));
 
         jLabel4.setBackground(new java.awt.Color(0, 51, 51));
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Registrar pago");
-        fondo.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 0, 180, 60));
-
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        fondo.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 270, 50));
+        fondo.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 0, 240, 80));
 
         cedulaField.setBackground(new java.awt.Color(255, 255, 255));
         cedulaField.setText("Cedula del cliente");
@@ -100,8 +96,15 @@ public class RegistrarPago extends javax.swing.JFrame {
                 montoFieldMousePressed(evt);
             }
         });
+        montoField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                montoFieldActionPerformed(evt);
+            }
+        });
         fondo.add(montoField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, 260, -1));
 
+        buscarCliente.setBackground(new java.awt.Color(30, 136, 229));
+        buscarCliente.setForeground(new java.awt.Color(0, 0, 0));
         buscarCliente.setText("Buscar cliente");
         buscarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         buscarCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -111,6 +114,8 @@ public class RegistrarPago extends javax.swing.JFrame {
         });
         fondo.add(buscarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 120, 50));
 
+        registrarPago.setBackground(new java.awt.Color(56, 142, 60));
+        registrarPago.setForeground(new java.awt.Color(0, 0, 0));
         registrarPago.setText("Registrar pago");
         registrarPago.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         registrarPago.addActionListener(new java.awt.event.ActionListener() {
@@ -120,6 +125,8 @@ public class RegistrarPago extends javax.swing.JFrame {
         });
         fondo.add(registrarPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 150, 50));
 
+        volver.setBackground(new java.awt.Color(120, 144, 156));
+        volver.setForeground(new java.awt.Color(0, 0, 0));
         volver.setText("Volver al menu");
         volver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         volver.addActionListener(new java.awt.event.ActionListener() {
@@ -135,14 +142,14 @@ public class RegistrarPago extends javax.swing.JFrame {
         jLabel5.setText("Cedula del cliente:");
         fondo.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 180, 60));
 
-        SaldoPendienteLabel.setBackground(new java.awt.Color(0, 51, 51));
-        SaldoPendienteLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        SaldoPendienteLabel.setForeground(new java.awt.Color(0, 0, 0));
-        fondo.add(SaldoPendienteLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 270, 50));
-
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Pago 2.jpg"))); // NOI18N
         jLabel6.setText("jLabel6");
-        fondo.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, -20, -1, 480));
+        fondo.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(348, -20, 780, 480));
+
+        SaldoPendienteLabel.setBackground(new java.awt.Color(255, 255, 51));
+        SaldoPendienteLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        SaldoPendienteLabel.setForeground(new java.awt.Color(0, 0, 0));
+        fondo.add(SaldoPendienteLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, 270, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -152,7 +159,7 @@ public class RegistrarPago extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(fondo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(fondo, javax.swing.GroupLayout.DEFAULT_SIZE, 594, Short.MAX_VALUE)
         );
 
         pack();
@@ -251,6 +258,10 @@ public class RegistrarPago extends javax.swing.JFrame {
         montoField.setText("");
     }//GEN-LAST:event_montoFieldMousePressed
 
+    private void montoFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_montoFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_montoFieldActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -296,7 +307,6 @@ public class RegistrarPago extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField montoField;
     private javax.swing.JButton registrarPago;
     private javax.swing.JButton volver;

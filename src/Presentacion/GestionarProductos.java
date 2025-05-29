@@ -49,11 +49,12 @@ public class GestionarProductos extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        fondo.setBackground(new java.awt.Color(238, 238, 238));
+        fondo.setBackground(new java.awt.Color(245, 245, 245));
         fondo.setMinimumSize(new java.awt.Dimension(690, 430));
         fondo.setPreferredSize(new java.awt.Dimension(690, 430));
         fondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        tablaProductos.setBackground(new java.awt.Color(204, 204, 204));
         tablaProductos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -120,6 +121,8 @@ public class GestionarProductos extends javax.swing.JFrame {
         });
         fondo.add(nombreField, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 320, 270, -1));
 
+        editar.setBackground(new java.awt.Color(51, 255, 51));
+        editar.setForeground(new java.awt.Color(0, 0, 0));
         editar.setText("Guardar cambios");
         editar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         editar.addActionListener(new java.awt.event.ActionListener() {
@@ -127,8 +130,10 @@ public class GestionarProductos extends javax.swing.JFrame {
                 editarActionPerformed(evt);
             }
         });
-        fondo.add(editar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 320, 130, -1));
+        fondo.add(editar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 310, 160, 40));
 
+        eliminar.setBackground(new java.awt.Color(51, 255, 102));
+        eliminar.setForeground(new java.awt.Color(0, 0, 0));
         eliminar.setText("Eliminar producto");
         eliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         eliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -136,8 +141,10 @@ public class GestionarProductos extends javax.swing.JFrame {
                 eliminarActionPerformed(evt);
             }
         });
-        fondo.add(eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 350, 130, -1));
+        fondo.add(eliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 360, 160, 40));
 
+        jButton1.setBackground(new java.awt.Color(255, 204, 102));
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("Volver");
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -145,7 +152,7 @@ public class GestionarProductos extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        fondo.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 390, 130, -1));
+        fondo.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 410, 160, 40));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));

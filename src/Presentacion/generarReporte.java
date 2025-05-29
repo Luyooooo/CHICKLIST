@@ -49,12 +49,15 @@ public class generarReporte extends javax.swing.JFrame {
 
         Reporte.setBackground(new java.awt.Color(255, 255, 204));
         Reporte.setColumns(20);
-        Reporte.setForeground(new java.awt.Color(255, 255, 255));
+        Reporte.setForeground(new java.awt.Color(0, 0, 0));
         Reporte.setRows(5);
+        Reporte.setSelectedTextColor(new java.awt.Color(255, 255, 255));
         jScrollPane1.setViewportView(Reporte);
 
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 310, 380));
 
+        GenerarReporte.setBackground(new java.awt.Color(153, 255, 153));
+        GenerarReporte.setForeground(new java.awt.Color(0, 0, 0));
         GenerarReporte.setText("Generar reporte");
         GenerarReporte.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         GenerarReporte.addActionListener(new java.awt.event.ActionListener() {
@@ -64,6 +67,8 @@ public class generarReporte extends javax.swing.JFrame {
         });
         jPanel2.add(GenerarReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 80, 150, 50));
 
+        GuardarArchivo.setBackground(new java.awt.Color(255, 255, 102));
+        GuardarArchivo.setForeground(new java.awt.Color(0, 0, 0));
         GuardarArchivo.setText("Guardar en archivo");
         GuardarArchivo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         GuardarArchivo.addActionListener(new java.awt.event.ActionListener() {
@@ -73,6 +78,8 @@ public class generarReporte extends javax.swing.JFrame {
         });
         jPanel2.add(GuardarArchivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 160, 150, 50));
 
+        jButton1.setBackground(new java.awt.Color(255, 102, 102));
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("Volver al menu");
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {

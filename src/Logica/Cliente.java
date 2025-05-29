@@ -47,9 +47,6 @@ public class Cliente {
     public String toString(){
         return nombre + " " + apellido + "\n(Cedula: " + cedula + ")";
     }
-    //public void actualizarSaldo(double montoPagado){}
-    //public String toString(){}
-    
 
     public double getSaldoPendiente() {
         return saldoPendiente;

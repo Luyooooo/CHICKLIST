@@ -32,7 +32,7 @@ public class ClientesDeudores extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        fondo.setBackground(new java.awt.Color(238, 238, 238));
+        fondo.setBackground(new java.awt.Color(245, 245, 245));
         fondo.setMinimumSize(new java.awt.Dimension(690, 430));
         fondo.setName(""); // NOI18N
         fondo.setPreferredSize(new java.awt.Dimension(690, 430));
@@ -45,10 +45,12 @@ public class ClientesDeudores extends javax.swing.JFrame {
         jLabel1.setText("Tabla de deudores");
         fondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 180, 30));
 
-        jScrollPane1.setBackground(new java.awt.Color(221, 221, 221));
+        jScrollPane1.setBackground(new java.awt.Color(204, 204, 204));
         jScrollPane1.setForeground(new java.awt.Color(221, 221, 221));
         fondo.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 560, 340));
 
+        cargarDeudores.setBackground(new java.awt.Color(102, 255, 102));
+        cargarDeudores.setForeground(new java.awt.Color(0, 0, 0));
         cargarDeudores.setText("Cargar deudores");
         cargarDeudores.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         cargarDeudores.addActionListener(new java.awt.event.ActionListener() {
@@ -56,8 +58,10 @@ public class ClientesDeudores extends javax.swing.JFrame {
                 cargarDeudoresActionPerformed(evt);
             }
         });
-        fondo.add(cargarDeudores, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 160, 120, 40));
+        fondo.add(cargarDeudores, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 140, 130, 60));
 
+        volver.setBackground(new java.awt.Color(153, 102, 255));
+        volver.setForeground(new java.awt.Color(0, 0, 0));
         volver.setText("Volver al menú");
         volver.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         volver.addActionListener(new java.awt.event.ActionListener() {
@@ -65,8 +69,9 @@ public class ClientesDeudores extends javax.swing.JFrame {
                 volverActionPerformed(evt);
             }
         });
-        fondo.add(volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 210, 120, 40));
+        fondo.add(volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 230, 130, 60));
 
+        tablaDeudores.setBackground(new java.awt.Color(204, 204, 204));
         tablaDeudores.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},

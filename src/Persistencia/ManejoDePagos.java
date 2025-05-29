@@ -41,7 +41,7 @@ public class ManejoDePagos {
         File archivo = new File(ARCHIVO_PAGOS+"pagos_" + usuario + ".txt");
 
         if (!archivo.exists()) {
-            System.out.println("No se encontraron pagos para el usuario " + usuario);
+            //System.out.println("No se encontraron pagos para el usuario " + usuario);
             return pagos;
         }
 

@@ -43,7 +43,7 @@ public class RegistrarVenta extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        fondo.setBackground(new java.awt.Color(238, 238, 238));
+        fondo.setBackground(new java.awt.Color(240, 240, 240));
         fondo.setMinimumSize(new java.awt.Dimension(690, 430));
         fondo.setPreferredSize(new java.awt.Dimension(690, 430));
         fondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -97,8 +97,10 @@ public class RegistrarVenta extends javax.swing.JFrame {
 
         PagadoCheckbox.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         PagadoCheckbox.setLabel("Pagado");
-        fondo.add(PagadoCheckbox, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 70, -1, -1));
+        fondo.add(PagadoCheckbox, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 50, 120, 40));
 
+        AgregarProducto.setBackground(new java.awt.Color(40, 167, 69));
+        AgregarProducto.setForeground(new java.awt.Color(0, 0, 0));
         AgregarProducto.setText("Agregar producto");
         AgregarProducto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         AgregarProducto.addActionListener(new java.awt.event.ActionListener() {
@@ -108,6 +110,8 @@ public class RegistrarVenta extends javax.swing.JFrame {
         });
         fondo.add(AgregarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 110, 130, 50));
 
+        RegistrarVenta.setBackground(new java.awt.Color(40, 167, 69));
+        RegistrarVenta.setForeground(new java.awt.Color(0, 0, 0));
         RegistrarVenta.setText("Registrar venta");
         RegistrarVenta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         RegistrarVenta.addActionListener(new java.awt.event.ActionListener() {
@@ -124,6 +128,8 @@ public class RegistrarVenta extends javax.swing.JFrame {
 
         fondo.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 280, 160));
 
+        jButton1.setBackground(new java.awt.Color(40, 167, 69));
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("Volver al menu");
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {

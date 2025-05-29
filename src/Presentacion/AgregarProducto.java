@@ -68,7 +68,7 @@ public class AgregarProducto extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Código:");
-        fondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, -1, -1));
+        fondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, -1, -1));
 
         codigoField.setBackground(new java.awt.Color(255, 255, 255));
         codigoField.setText("Código del producto");
@@ -82,22 +82,22 @@ public class AgregarProducto extends javax.swing.JFrame {
                 codigoFieldActionPerformed(evt);
             }
         });
-        fondo.add(codigoField, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, 210, -1));
+        fondo.add(codigoField, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, 210, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Precio:");
-        fondo.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, -1, -1));
+        fondo.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Cantidad:");
-        fondo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, -1, -1));
+        fondo.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Agregar nuevo producto");
-        fondo.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 150, -1, -1));
+        fondo.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 60, 240, 80));
 
         precioField.setBackground(new java.awt.Color(255, 255, 255));
         precioField.setText("Precio del producto");
@@ -111,7 +111,7 @@ public class AgregarProducto extends javax.swing.JFrame {
                 precioFieldActionPerformed(evt);
             }
         });
-        fondo.add(precioField, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 210, -1));
+        fondo.add(precioField, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, 210, -1));
 
         cantidadField.setBackground(new java.awt.Color(255, 255, 255));
         cantidadField.setText("Cantidad de unidades del producto");
@@ -128,7 +128,7 @@ public class AgregarProducto extends javax.swing.JFrame {
                 cantidadFieldActionPerformed(evt);
             }
         });
-        fondo.add(cantidadField, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 350, 210, -1));
+        fondo.add(cantidadField, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 330, 210, -1));
 
         nombreField.setBackground(new java.awt.Color(255, 255, 255));
         nombreField.setText("Nombre del producto");
@@ -149,6 +149,8 @@ public class AgregarProducto extends javax.swing.JFrame {
         jLabel5.setText("Nombre:");
         fondo.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, -1, -1));
 
+        agregarInventario.setBackground(new java.awt.Color(153, 204, 255));
+        agregarInventario.setForeground(new java.awt.Color(0, 0, 0));
         agregarInventario.setText("Agregar al inventario");
         agregarInventario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         agregarInventario.addActionListener(new java.awt.event.ActionListener() {
@@ -158,6 +160,8 @@ public class AgregarProducto extends javax.swing.JFrame {
         });
         fondo.add(agregarInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 190, 170, 70));
 
+        volver.setBackground(new java.awt.Color(255, 153, 153));
+        volver.setForeground(new java.awt.Color(0, 0, 0));
         volver.setText("Volver");
         volver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         volver.addActionListener(new java.awt.event.ActionListener() {
@@ -231,7 +235,7 @@ public class AgregarProducto extends javax.swing.JFrame {
         Producto nuevo = new Producto(nombre, codigo, precio, cantidad);
         Persistencia.ManejoDeProductos.guardarProducto(usuario,nuevo);
 
-        //JOptionPane.showMessageDialog(this, "Producto agregado correctamente.");
+        JOptionPane.showMessageDialog(this, "Producto agregado correctamente.");
 
         // Limpiar campos
         nombreField.setText("");

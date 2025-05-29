@@ -46,7 +46,6 @@ public class Venta {
     public void marcarComoPagada(){
         this.pagada=true;
     }
-    //public abstract void registrarVenta();
 
     public Cliente getCliente() {
         return cliente;

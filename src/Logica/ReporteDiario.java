@@ -55,7 +55,6 @@ public class ReporteDiario {
                "Total pendiente: $" + totalPendiente();
     }
     
-    //public String generarReporte(){}
 
    
     

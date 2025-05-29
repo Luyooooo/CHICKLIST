@@ -40,7 +40,7 @@ public class InicioDeSesion extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        fondo.setBackground(new java.awt.Color(238, 238, 238));
+        fondo.setBackground(new java.awt.Color(173, 216, 230));
         fondo.setMinimumSize(new java.awt.Dimension(690, 430));
         fondo.setPreferredSize(new java.awt.Dimension(690, 430));
         fondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -76,6 +76,8 @@ public class InicioDeSesion extends javax.swing.JFrame {
         });
         fondo.add(contraselaField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 400, -1));
 
+        jButton1.setBackground(new java.awt.Color(25, 118, 210));
+        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("Iniciar sesion");
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -90,6 +92,8 @@ public class InicioDeSesion extends javax.swing.JFrame {
         jLabel5.setText("jLabel5");
         fondo.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, -20, 380, 480));
 
+        Volver.setBackground(new java.awt.Color(224, 224, 224));
+        Volver.setForeground(new java.awt.Color(0, 0, 0));
         Volver.setText("Volver");
         Volver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -39,20 +39,20 @@ public class ManejoDeUsuario {
     // Método para registrar un nuevo usuario
     public static void registrarUsuario(Dueño dueño) {
         if (usuarioExiste(dueño.getUsuario())) {
-            JOptionPane.showMessageDialog(null,"Error: El usuario '" + dueño.getUsuario() + "' ya está registrado." );
+            //JOptionPane.showMessageDialog(null,"Error: El usuario '" + dueño.getUsuario() + "' ya está registrado." );
             //System.out.println("Error: El usuario '" + usuario + "' ya está registrado.");
             return; // No se registra el usuario
         }
         try (PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(ARCHIVO_USUARIOS, true)))) {
             pw.println(dueño.getNombre() + "," + dueño.getUsuario() + "," + dueño.getContraseña());
-            JOptionPane.showMessageDialog(null, "usuario registrado exitosamente");
+            //JOptionPane.showMessageDialog(null, "usuario registrado exitosamente");
             //System.out.println("Usuario registrado exitosamente.");
 
             // Crear el archivo de inventario para el nuevo usuario
             crearArchivoInventario(dueño.getUsuario());
 
         } catch (IOException e) {
-            JOptionPane.showMessageDialog(null, "Error al registrar usuario", "Error", JOptionPane.ERROR_MESSAGE);
+            //JOptionPane.showMessageDialog(null, "Error al registrar usuario", "Error", JOptionPane.ERROR_MESSAGE);
             //System.err.println("Error al registrar usuario: " + e.getMessage());
         }
     }

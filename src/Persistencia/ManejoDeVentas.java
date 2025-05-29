@@ -75,7 +75,7 @@ public class ManejoDeVentas {
                         venta.marcarComoPagada();
                         }
 
-                        // Muy importante: actualizar saldo si no está pagada
+                        // actualizar saldo si no está pagada
                         cliente.agregarVenta(venta);
 
                         ventas.add(venta);                    

@@ -56,7 +56,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jLabel1.setText("Menú principal");
         fondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, 280, 40));
 
-        CerrarSesion.setBackground(new java.awt.Color(251, 214, 1));
+        CerrarSesion.setBackground(new java.awt.Color(255, 102, 102));
         CerrarSesion.setForeground(new java.awt.Color(0, 0, 0));
         CerrarSesion.setText("Cerrar sesion");
         CerrarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -67,6 +67,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
         fondo.add(CerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 240, 150, 30));
 
+        verInventario.setBackground(new java.awt.Color(153, 255, 153));
+        verInventario.setForeground(new java.awt.Color(0, 0, 0));
         verInventario.setText("Ver inventario");
         verInventario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         verInventario.addActionListener(new java.awt.event.ActionListener() {
@@ -76,6 +78,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
         fondo.add(verInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, 150, 50));
 
+        generarReporte.setBackground(new java.awt.Color(255, 255, 153));
+        generarReporte.setForeground(new java.awt.Color(0, 0, 0));
         generarReporte.setText("Generar reporte");
         generarReporte.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         generarReporte.addActionListener(new java.awt.event.ActionListener() {
@@ -85,6 +89,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
         fondo.add(generarReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 130, 150, 60));
 
+        registrarCliente.setBackground(new java.awt.Color(102, 255, 204));
+        registrarCliente.setForeground(new java.awt.Color(0, 0, 0));
         registrarCliente.setText("Registrar cliente");
         registrarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         registrarCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -94,6 +100,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
         fondo.add(registrarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 160, 50));
 
+        registrarVenta.setBackground(new java.awt.Color(102, 255, 204));
+        registrarVenta.setForeground(new java.awt.Color(0, 0, 0));
         registrarVenta.setText("Registrar venta");
         registrarVenta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         registrarVenta.addActionListener(new java.awt.event.ActionListener() {
@@ -103,6 +111,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
         fondo.add(registrarVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, 160, 50));
 
+        registrarPago.setBackground(new java.awt.Color(102, 255, 204));
+        registrarPago.setForeground(new java.awt.Color(0, 0, 0));
         registrarPago.setText("Registrar pago");
         registrarPago.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         registrarPago.addActionListener(new java.awt.event.ActionListener() {
@@ -112,6 +122,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
         fondo.add(registrarPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, 160, 50));
 
+        clientesDeudores.setBackground(new java.awt.Color(153, 255, 153));
+        clientesDeudores.setForeground(new java.awt.Color(0, 0, 0));
         clientesDeudores.setText("Ver clientes deudores");
         clientesDeudores.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

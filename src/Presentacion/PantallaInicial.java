@@ -39,7 +39,7 @@ public class PantallaInicial extends javax.swing.JFrame {
         fondo.add(pregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 290, -1));
 
         botonIniciarSesion.setBackground(new java.awt.Color(204, 204, 0));
-        botonIniciarSesion.setForeground(new java.awt.Color(255, 255, 255));
+        botonIniciarSesion.setForeground(new java.awt.Color(0, 0, 0));
         botonIniciarSesion.setText("Iniciar sesion");
         botonIniciarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         botonIniciarSesion.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -55,7 +55,7 @@ public class PantallaInicial extends javax.swing.JFrame {
         fondo.add(botonIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 150, 50));
 
         botonRegistrar.setBackground(new java.awt.Color(204, 204, 0));
-        botonRegistrar.setForeground(new java.awt.Color(255, 255, 255));
+        botonRegistrar.setForeground(new java.awt.Color(0, 0, 0));
         botonRegistrar.setText("Registrarse");
         botonRegistrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         botonRegistrar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -134,11 +134,11 @@ public class PantallaInicial extends javax.swing.JFrame {
         //</editor-fold>
 
         
-        java.awt.EventQueue.invokeLater(new Runnable() {
+        /*java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new PantallaInicial().setVisible(true);
             }
-        });
+        });*/
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -17,13 +17,6 @@ public class Dueño {
     
     
     
-    //public String toString(){}
-    /*public abstract void administrarInventario();
-    public abstract void administrarVentas();
-    public abstract void hacerSeguimientoDePagos();
-    public abstract void generarReporte();
-    public abstract void gestionarClientes();*/
-    
     public String getNombre() {
         return nombre;
     }
@@ -36,10 +29,6 @@ public class Dueño {
         return contraseña;
     }
 
-
-    /*public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }*/
 
     public void setUsuario(String usuario) {
         this.usuario = usuario;
